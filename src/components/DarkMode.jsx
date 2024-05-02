@@ -3,7 +3,6 @@
 import { MdLightMode, MdDarkMode } from "react-icons/md";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import { Fascinate } from "next/font/google";
 
 export default function DarkMode() {
   const { theme, setTheme, systemTheme } = useTheme();

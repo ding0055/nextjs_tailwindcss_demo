@@ -1,7 +1,24 @@
-import React from 'react'
+import Results from "@/components/Results";
 
-export default function page() {
+const API_KEY = process.env.API_KEY;
+
+export default async function Home() {
+  const res = await fetch(
+    "https://api.pokemontcg.io/v2/cards?page=1&pageSize=10",
+    {
+      method: "GET",
+      headers: {
+        "X-Api-Key": API_KEY,
+      },
+    }
+  );
+  const jdata = await res.json();
+  const results = jdata.data;
+
+  console.log(results);
   return (
-    <div>page</div>
-  )
+    <div>
+      <Results results={results} />
+    </div>
+  );
 }

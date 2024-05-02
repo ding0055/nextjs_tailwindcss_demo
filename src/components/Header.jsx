@@ -8,7 +8,7 @@ export default function Header() {
     <div>
       <div className="flex items-center px-8 py-6 bg-gray-900 justify-between">
         <div className="text-white flex items-center space-x-4">
-          <Link href="/" class="flex items-center mr-4">
+          <Link href="/" className="flex items-center mr-4">
             <img
               src="/images/YGG_Logo.svg"
               alt="ygg-shield"
@@ -28,14 +28,14 @@ export default function Header() {
           <DarkMode />
           <button
             type="button"
-            class="rounded-full px-3 py-1 bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ..."
+            className="rounded-full px-3 py-1 bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ..."
           >
             SIGN UP
           </button>
 
           <button
             type="button"
-            class="rounded-full px-1 py-1 border border-white"
+            className="rounded-full px-1 py-1 border border-white"
           >
             <svg
               width="24px"
@@ -45,8 +45,8 @@ export default function Header() {
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M20 7H4V14.5313L12 18.7401L20 14.5313V7ZM22 15.739L12 21L2 15.739V5H22V15.739Z"
                 fill="#F4F9FA"
               ></path>
@@ -59,8 +59,8 @@ export default function Header() {
                 fill="#F4F9FA"
               ></path>
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M9.64645 13.6464C9.84171 13.4512 10.1583 13.4512 10.3536 13.6464C10.7386 14.0315 11.3492 14.25 12 14.25C12.6508 14.25 13.2614 14.0315 13.6464 13.6464C13.8417 13.4512 14.1583 13.4512 14.3536 13.6464C14.5488 13.8417 14.5488 14.1583 14.3536 14.3536C13.7386 14.9685 12.8492 15.25 12 15.25C11.1508 15.25 10.2614 14.9685 9.64645 14.3536C9.45118 14.1583 9.45118 13.8417 9.64645 13.6464Z"
                 fill="#F4F9FA"
               ></path>
