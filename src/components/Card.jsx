@@ -13,13 +13,15 @@ export default function Card({ result }) {
           width={500}
           height={300}
           className="sm:rounded-t-lg group-hover:opacity-75 transition-opacity duration-300"
+          alt="Pokemon"
         ></Image>
-        <div className="flex justify-between items-center px-4 font-bold">
-          <p>{result.set.name}</p>
+        <div className="flex justify-between items-center p-4 font-bold">
+          <p>{result.name}</p>
           <Image
             src={`${result.set.images.symbol}`}
             width={30}
             height={20}
+            alt="Pokemon"
           ></Image>
         </div>
       </Link>

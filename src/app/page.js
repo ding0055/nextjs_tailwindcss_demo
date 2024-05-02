@@ -4,7 +4,7 @@ const API_KEY = process.env.API_KEY;
 
 export default async function Home() {
   const res = await fetch(
-    "https://api.pokemontcg.io/v2/cards?page=1&pageSize=10",
+    "https://api.pokemontcg.io/v2/cards?q=subtypes:vmax",
     {
       method: "GET",
       headers: {
@@ -15,7 +15,6 @@ export default async function Home() {
   const jdata = await res.json();
   const results = jdata.data;
 
-  console.log(results);
   return (
     <div>
       <Results results={results} />
