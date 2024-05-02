@@ -1,6 +1,7 @@
 import React from "react";
 import MenuItem from "./MenuItem";
 import Link from "next/link";
+import DarkMode from "./DarkMode";
 
 export default function Header() {
   return (
@@ -24,6 +25,7 @@ export default function Header() {
         </div>
 
         <div className="text-white flex items-center space-x-4">
+          <DarkMode />
           <button
             type="button"
             class="rounded-full px-3 py-1 bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ..."
