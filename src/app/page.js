@@ -1,10 +1,11 @@
+import Pagination from "@/components/Pagination";
 import Results from "@/components/Results";
 
 const API_KEY = process.env.API_KEY;
 
-export default async function Home() {
+export default async function Home({ searchParams }) {
   const res = await fetch(
-    "https://api.pokemontcg.io/v2/cards?q=subtypes:vmax",
+    "https://api.pokemontcg.io/v2/cards?q=subtypes:vmax&pageSize=15",
     {
       method: "GET",
       headers: {
@@ -17,7 +18,8 @@ export default async function Home() {
 
   return (
     <div>
-      <Results results={results} />
+      <Results results={results} params={searchParams} />
+      <Pagination results={results} />
     </div>
   );
 }

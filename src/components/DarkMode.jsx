@@ -10,7 +10,7 @@ export default function DarkMode() {
   const currentTheme = theme === "system" ? systemTheme : theme;
   useEffect(() => setMounted(true), []);
   return (
-    <div>
+    <div className="flex items-center justify-center">
       {mounted &&
         (currentTheme === "dark" ? (
           <MdLightMode

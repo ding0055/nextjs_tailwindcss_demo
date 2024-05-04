@@ -1,73 +1,86 @@
-import React from "react";
+"use client";
+
 import MenuItem from "./MenuItem";
 import Link from "next/link";
 import DarkMode from "./DarkMode";
+import React, { useState } from "react";
+import Search from "@/components/Search";
 
 export default function Header() {
-  return (
-    <div>
-      <div className="flex items-center px-8 py-6 bg-gray-900 justify-between">
-        <div className="text-white flex items-center space-x-4">
-          <Link href="/" className="flex items-center mr-4">
-            <img
-              src="/images/YGG_Logo.svg"
-              alt="ygg-shield"
-              height="40"
-              width="auto"
-            />
-          </Link>
+  const [open, setOpen] = useState(false);
 
-          <div className="flex items-center font-semibold space-x-6 bg-clip-text text-transparent bg-gradient-to-br from-fuchsia-600 to-green-400">
+  return (
+    <nav className="relative bg-white shadow dark:bg-gray-800">
+      <div className="container px-6 py-3 mx-auto md:flex">
+        <div className="flex items-center justify-between">
+          <a href="#">
+            <img
+              className="w-auto h-6 sm:h-10"
+              src="/images/YGG_Logo.svg"
+              alt=""
+            />
+          </a>
+
+          <div className="flex lg:hidden">
+            <button
+              onClick={() => setOpen(!open)}
+              type="button"
+              className="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400"
+              aria-label="toggle menu"
+            >
+              {!open ? (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-6 h-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M4 8h16M4 16h16"
+                  />
+                </svg>
+              ) : (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-6 h-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              )}
+            </button>
+          </div>
+        </div>
+
+        <div
+          className={
+            (open
+              ? "translate-x-0 opacity-100 "
+              : "opacity-0 -translate-x-full ") +
+            "absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white dark:bg-gray-800 md:mt-0 md:p-0 md:top-0 md:relative md:opacity-100 md:translate-x-0 md:flex md:items-center md:justify-between"
+          }
+        >
+          <div className="flex flex-col px-2 -mx-4  items-center md:flex-row md:mx-10 md:py-0">
             <MenuItem title="home" address="/" />
             <MenuItem title="games" address="/games" />
             <MenuItem title="guilds" address="/guilds" />
           </div>
-        </div>
 
-        <div className="text-white flex items-center space-x-4">
+          <Search />
           <DarkMode />
-          <button
-            type="button"
-            className="rounded-full px-3 py-1 bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ..."
-          >
-            SIGN UP
-          </button>
-
-          <button
-            type="button"
-            className="rounded-full px-1 py-1 border border-white"
-          >
-            <svg
-              width="24px"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M20 7H4V14.5313L12 18.7401L20 14.5313V7ZM22 15.739L12 21L2 15.739V5H22V15.739Z"
-                fill="#F4F9FA"
-              ></path>
-              <path
-                d="M7.5 13C8.32843 13 9 12.3284 9 11.5C9 10.6716 8.32843 10 7.5 10C6.67157 10 6 10.6716 6 11.5C6 12.3284 6.67157 13 7.5 13Z"
-                fill="#F4F9FA"
-              ></path>
-              <path
-                d="M16.5 13C17.3284 13 18 12.3284 18 11.5C18 10.6716 17.3284 10 16.5 10C15.6716 10 15 10.6716 15 11.5C15 12.3284 15.6716 13 16.5 13Z"
-                fill="#F4F9FA"
-              ></path>
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M9.64645 13.6464C9.84171 13.4512 10.1583 13.4512 10.3536 13.6464C10.7386 14.0315 11.3492 14.25 12 14.25C12.6508 14.25 13.2614 14.0315 13.6464 13.6464C13.8417 13.4512 14.1583 13.4512 14.3536 13.6464C14.5488 13.8417 14.5488 14.1583 14.3536 14.3536C13.7386 14.9685 12.8492 15.25 12 15.25C11.1508 15.25 10.2614 14.9685 9.64645 14.3536C9.45118 14.1583 9.45118 13.8417 9.64645 13.6464Z"
-                fill="#F4F9FA"
-              ></path>
-            </svg>
-          </button>
         </div>
       </div>
-    </div>
+    </nav>
   );
 }
