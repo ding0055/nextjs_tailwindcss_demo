@@ -17,13 +17,16 @@ export default async function Card({ params }) {
         className="p-4 md:pt-8 flex flex-col md:flex-row content-center justify-center
       max-w-6xl mx-auto md:space-x-6"
       >
-        <Image
-          src={`${card.data.images.large}`}
-          className="sm:rounded-t-lg max-w-full h-auto"
-          width={300}
-          height={200}
-          alt="Pokemon"
-        ></Image>
+        <div className="flex content-center justify-center">
+          <Image
+            src={`${card.data.images.large}`}
+            className="sm:rounded-t-lg max-w-full h-auto"
+            width={300}
+            height={200}
+            alt="Pokemon"
+          ></Image>
+        </div>
+
         <div className="p-2 justify-center">
           <div className="flex justify-center content-center">
             <Image
