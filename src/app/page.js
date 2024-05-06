@@ -1,6 +1,6 @@
 import Pagination from "@/components/Pagination";
 import Results from "@/components/Results";
-import Scroll from "@/components/scroll";
+import Scroll from "@/components/Scroll";
 
 const API_KEY = process.env.API_KEY;
 
