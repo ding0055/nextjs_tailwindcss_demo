@@ -10,12 +10,12 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="relative bg-white shadow dark:bg-gray-800">
+    <nav className="relative bg-gray-800 shadow dark:bg-gray-800">
       <div className="container px-6 py-3 mx-auto md:flex">
         <div className="flex items-center justify-between">
           <a href="#">
             <img
-              className="w-auto h-6 sm:h-10"
+              className="w-auto h-6 sm:h-14"
               src="/images/YGG_Logo.svg"
               alt=""
             />
@@ -68,13 +68,34 @@ export default function Header() {
             (open
               ? "translate-x-0 opacity-100 "
               : "opacity-0 -translate-x-full ") +
-            "absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white dark:bg-gray-800 md:mt-0 md:p-0 md:top-0 md:relative md:opacity-100 md:translate-x-0 md:flex md:items-center md:justify-between"
+            "absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-gray-800 dark:bg-gray-800 md:mt-0 md:p-0 md:top-0 md:relative md:opacity-100 md:translate-x-0 md:flex md:items-center md:justify-between"
           }
         >
           <div className="flex flex-col px-2 -mx-4  items-center md:flex-row md:mx-10 md:py-0">
-            <MenuItem title="home" address="/" />
+            <Link
+              href="/"
+              onClick={() => setOpen(false)}
+              className="px-2.5 py-2 text-gray-200 transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 md:mx-2"
+            >
+              <p className="uppercase">home</p>
+            </Link>
+            <Link
+              href="/games"
+              onClick={() => setOpen(false)}
+              className="px-2.5 py-2 text-gray-200 transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 md:mx-2"
+            >
+              <p className="uppercase">games</p>
+            </Link>
+            <Link
+              href="/guilds"
+              onClick={() => setOpen(false)}
+              className="px-2.5 py-2 text-gray-200 transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 md:mx-2"
+            >
+              <p className="uppercase">guilds</p>
+            </Link>
+            {/* <MenuItem title="home" address="/" />
             <MenuItem title="games" address="/games" />
-            <MenuItem title="guilds" address="/guilds" />
+            <MenuItem title="guilds" address="/guilds" /> */}
           </div>
 
           <Search />

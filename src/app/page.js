@@ -1,5 +1,6 @@
 import Pagination from "@/components/Pagination";
 import Results from "@/components/Results";
+import Scroll from "@/components/scroll";
 
 const API_KEY = process.env.API_KEY;
 
@@ -18,6 +19,7 @@ export default async function Home({ searchParams }) {
 
   return (
     <div>
+      <Scroll />
       <Results results={results} params={searchParams} />
       <Pagination results={results} />
     </div>
