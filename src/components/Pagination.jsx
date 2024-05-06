@@ -18,7 +18,7 @@ export default function Pagination({ results }) {
     replace(`${path}?${params}`);
   };
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center py-2">
       {pageButtons.map((item) => (
         <button
           key={item}
